@@ -1,0 +1,6 @@
+# api specific parameters
+parameters:
+    api_prod_name: 'Sistema Nacional de Turnos'
+    api_name: 'atu'
+    api_version: 0.10.17
+    totem_version: 0.1.1

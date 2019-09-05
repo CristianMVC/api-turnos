@@ -1,0 +1,26 @@
+# api specific parameters
+parameters:
+    notificaciones:
+        host: '%snt_api_notificaciones_url%'
+        user: '%snt_api_notificaciones_user%'
+        pass: '%snt_api_notificaciones_pass%'
+        token: '%snt_api_notificaciones_token%'
+        from: '%snt_api_notificaciones_email%'
+        subject: '%snt_api_notificaciones_subject%'
+        batch_limit: 15
+        templates:
+            turnos: 'snt-turno-ciudadano-sistematurnos'
+            usuario: 'snt-usuarios-sistematurnos'
+            turnocancelar: 'snt-turno-cancelar-sistematurnos'
+            recuperar-password: 'snt-recuperar-password-sistematurnos'
+            reasignacion: 'reasignacion-sistematurnos'
+            turnos_multiples: 'snt-turno-ciudadano-sistematurnos-multiple'
+        urls:
+            auth: '/api-auth/token'
+            templates: '/templates'
+            template_test: '/templates/%s/preview'
+            notifications: '/notifications'
+            base_url: '%system_base_url%'
+            turno:
+                nuevo: '/turnos'
+                cancelar: '/turnos/busquedaTurno/'    

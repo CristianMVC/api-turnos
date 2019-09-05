@@ -1,0 +1,17 @@
+totem_v1:
+    resource: "@TotemV1Bundle/Controller/"
+    type:     annotation
+    prefix:   /api/v1.0/totem
+
+api_v1:
+    resource: '@ApiV1Bundle/Controller/'
+    type: annotation
+    prefix:   /api/v1.0
+
+app:
+    resource: '@AppBundle/Controller/'
+    type:     annotation
+    
+#NelmioApiDocBundle:
+#    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+#    prefix:   /api/doc

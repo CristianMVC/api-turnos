@@ -1,0 +1,21 @@
+# api specific parameters
+parameters:
+    integration:
+        host:
+            snc: '%snc_api_integration%'
+            usuarios: '%usuarios_api_url%'
+        api_id:
+            snt: 60747c620c56dddd926c2f0328fa760e
+            snc: 6ab8946c9ec922ecba89385033689e94
+        keys:
+            snt: '%snt_signature_key%'
+            snc: '%snc_signature_key%'
+        urls:
+            test: '/integration/secure/response'
+            colas: '/colas/grupotramite'
+            puntosatencion: '/integracion/puntosatencion'
+            turnos: '/integration/turnos'
+            turnos.delante: '/integration/tramite/delante'
+
+            usuarios:
+                puntosatencion: '/integracion/puntosatencion'

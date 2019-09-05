@@ -1,0 +1,6 @@
+## Doctrine ignores tables listener
+services:
+    doctrine.ignoredtables.listener:
+        class: ApiV1Bundle\EventListener\DoctrineIgnoreTablesListener
+        tags:
+            - { name: doctrine.event_listener, event: postGenerateSchema }

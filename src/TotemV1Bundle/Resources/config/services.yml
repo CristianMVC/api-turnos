@@ -1,0 +1,83 @@
+parameters:
+    # services
+    totem.categoria.services.class: TotemV1Bundle\ApplicationServices\CategoriaServices
+    totem.tramite.services.class: TotemV1Bundle\ApplicationServices\TramiteServices
+    totem.turno.services.class: TotemV1Bundle\ApplicationServices\TurnoServices
+    # repositories
+    totem.categoria.repository.class: ApiV1Bundle\Repository\CategoriaRepository
+    totem.tramite.repository.class: ApiV1Bundle\Repository\TramiteRepository
+    totem.turno.repository.class: ApiV1Bundle\Repository\TurnoRepository
+    # validator
+    totem.turno.validator.class: TotemV1Bundle\Entity\Validator\TurnoTotemValidator
+    totem.tramite.validator.class: TotemV1Bundle\Entity\Validator\TramiteTotemValidator
+    # integration    
+    totem.turno.integration.class: TotemV1Bundle\ExternalServices\TurnoTotemIntegration
+    snt.parser.services.class: SNT\Infraestructure\Services\CommonMark\CommonMarkParser
+
+services:
+
+    ### INTEGRATIONS ###
+    
+    totem.turno.integration:
+        class: '%totem.turno.integration.class%'
+        arguments: ['@service_container', '@snc.integration.service', '@snc.integration.mock']
+
+    ### REPOSITORIES ###
+
+    totem.tramite.repository:
+        class: '%totem.tramite.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Tramite
+
+    totem.categoria.repository:
+        class: '%totem.categoria.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Categoria
+            
+    totem.turno.repository:
+        class: '%totem.turno.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Turno
+            
+    ### VALIDATORS ###
+    
+    totem.turno.validator:
+        class: '%totem.turno.validator.class%'
+
+    totem.tramite.validator:
+        class: '%totem.tramite.validator.class%'
+
+    ### SERVICES ###
+
+    totem.tramite.services:
+        class: '%totem.tramite.services.class%'
+        arguments: ['@service_container', '@totem.tramite.repository', '@totem.tramite.validator', '@totem.turno.integration', '@snt.parser.services']
+
+    totem.categoria.services:
+        class: '%totem.categoria.services.class%'
+        arguments: ['@service_container', '@totem.categoria.repository']
+        
+    totem.turno.services:
+        class: '%totem.turno.services.class%'
+        arguments: ['@service_container', '@totem.turno.repository', '@totem.turno.validator', '@totem.turno.integration']
+
+    League\CommonMark\Extension\CommonMarkCoreExtension:
+      class: League\CommonMark\Extension\CommonMarkCoreExtension
+
+    League\CommonMark\Extension\Extension: '@League\CommonMark\Extension\CommonMarkCoreExtension'
+
+    snt.parser.enviroment:
+      class: 'SNT\Infraestructure\Services\CommonMark\SNTCommonMarkParserEnvironment'
+      autowire: true
+
+    snt.parser.services:
+      class: '%snt.parser.services.class%'
+      arguments: ['@snt.parser.enviroment']
+
+    snt.parser.services:
+          class: '%snt.parser.services.class%'
+          autowire: true
+

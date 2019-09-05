@@ -1,0 +1,464 @@
+parameters:
+    snt.general.services.class: ApiV1Bundle\ApplicationServices\SNTServices
+    snt.services.security.class: ApiV1Bundle\ApplicationServices\SecurityServices
+    snt.area.repository.class: ApiV1Bundle\Repository\AreaRepository
+    snt.area.services.class: ApiV1Bundle\ApplicationServices\AreaServices
+    snt.disponibilidad.repository.class: ApiV1Bundle\Repository\DisponibilidadRepository
+    snt.disponibilidad.service.class: ApiV1Bundle\ApplicationServices\DisponibilidadServices
+    snt.grupotramite.repository.class: ApiV1Bundle\Repository\GrupoTramiteRepository
+    snt.grupotramite.services.class: ApiV1Bundle\ApplicationServices\GrupoTramitesServices
+    snt.horarioatencion.repository.class: ApiV1Bundle\Repository\HorarioAtencionRepository
+    snt.horarioatencion.services.class: ApiV1Bundle\ApplicationServices\HorarioAtencionServices
+    snt.localidad.repository.class: ApiV1Bundle\Repository\LocalidadRepository
+    snt.localidad.services.class: ApiV1Bundle\ApplicationServices\LocalidadServices
+    snt.organismo.repository.class: ApiV1Bundle\Repository\OrganismoRepository
+    snt.organismo.services.class: ApiV1Bundle\ApplicationServices\OrganismoServices
+    snt.parser.services.class: SNT\Infraestructure\Services\CommonMark\CommonMarkParser
+    snt.provincia.repository.class: ApiV1Bundle\Repository\ProvinciaRepository
+    snt.provincia.services.class: ApiV1Bundle\ApplicationServices\ProvinciaServices
+    snt.puntoatencion.repository.class: ApiV1Bundle\Repository\PuntoAtencionRepository
+    snt.puntoatencion.services.class: ApiV1Bundle\ApplicationServices\PuntoAtencionServices
+    snt.tramite.repository.class: ApiV1Bundle\Repository\TramiteRepository
+    snt.tramite.services.class: ApiV1Bundle\ApplicationServices\TramiteServices
+    snt.turno.repository.class: ApiV1Bundle\Repository\TurnoRepository
+    snt.turno.services.class: ApiV1Bundle\ApplicationServices\TurnoServices
+    snt.usuario.services.class: ApiV1Bundle\ApplicationServices\UsuarioServices
+    snt.feriadonacional.repository.class: ApiV1Bundle\Repository\FeriadoNacionalRepository
+    snt.feriadonacional.services.class: ApiV1Bundle\ApplicationServices\FeriadoNacionalServices
+    snt.dianolaborable.repository.class: ApiV1Bundle\Repository\DiaNoLaborableRepository
+    snt.user.repository.class: ApiV1Bundle\Repository\UserRepository
+    snt.repository.token.class: ApiV1Bundle\Repository\TokenRepository
+    snt.admin.repository.class: ApiV1Bundle\Repository\AdminRepository
+    snt.userorganismo.repository.class: ApiV1Bundle\Repository\UserOrganismoRepository
+    snt.userarea.repository.class: ApiV1Bundle\Repository\UserAreaRepository
+    snt.userpuntoatencion.repository.class: ApiV1Bundle\Repository\UserPuntoAtencionRepository
+    snt.usuario.repository.class: ApiV1Bundle\Repository\UsuarioRepository
+    snt.roles.services.class: ApiV1Bundle\ApplicationServices\RolesServices
+    snt.categorias.services.class: ApiV1Bundle\ApplicationServices\CategoriaServices
+    snt.categorias.repository.class: ApiV1Bundle\Repository\CategoriaRepository
+    snt.puntotramite.repository.class: ApiV1Bundle\Repository\PuntoTramiteRepository
+    snt.categoria.tramite.services.class: ApiV1Bundle\ApplicationServices\CategoriaTramiteServices
+    snt.categoria.tramite.repository.class: ApiV1Bundle\Repository\CategoriaTramiteRepository
+    snt.etiqueta.services.class: ApiV1Bundle\ApplicationServices\EtiquetaServices
+    snt.etiqueta.repository.class: ApiV1Bundle\Repository\EtiquetaRepository
+    snt.dianolaborabletramite.services.class: ApiV1Bundle\ApplicationServices\DiaNoLaborableTramiteServices
+    snt.dianolaborabletramite.repository.class: ApiV1Bundle\Repository\DiaNoLaborableTramiteRepository
+    snt.redis.services.class: ApiV1Bundle\ApplicationServices\RedisServices
+    snt.aregentina.services.class: ApiV1Bundle\ApplicationServices\MiArgentinaServices
+    snt.aregentina.repository.class: ApiV1Bundle\Repository\MiArgentinaRepository
+
+    ## validators
+    snt.area.validator.class: ApiV1Bundle\Entity\Validator\AreaValidator
+    snt.disponibilidad.validator.class: ApiV1Bundle\Entity\Validator\DisponibilidadValidator
+    snt.grupotramites.validator.class: ApiV1Bundle\Entity\Validator\GrupoTramitesValidator
+    snt.horarioatencion.validator.class: ApiV1Bundle\Entity\Validator\HorarioAtencionValidator
+    snt.organismo.validator.class: ApiV1Bundle\Entity\Validator\OrganismoValidator
+    snt.puntoatencion.validator.class: ApiV1Bundle\Entity\Validator\PuntoAtencionValidator
+    snt.tramite.validator.class: ApiV1Bundle\Entity\Validator\TramiteValidator
+    snt.turno.validator.class: ApiV1Bundle\Entity\Validator\TurnoValidator
+    snt.feriadonacional.validator.class: ApiV1Bundle\Entity\Validator\FeriadoNacionalValidator
+    snt.user.validator.class: ApiV1Bundle\Entity\Validator\UserValidator
+    snt.admin.validator.class: ApiV1Bundle\Entity\Validator\AdminValidator
+    snt.userorganismo.validator.class: ApiV1Bundle\Entity\Validator\UserOrganismoValidator
+    snt.userarea.validator.class: ApiV1Bundle\Entity\Validator\UserAreaValidator
+    snt.userpuntoatencion.validator.class: ApiV1Bundle\Entity\Validator\UserPuntoAtencionValidator
+    snt.localidad.validator.class: ApiV1Bundle\Entity\Validator\LocalidadValidator
+    snt.communication.validator.class: ApiV1Bundle\Entity\Validator\CommunicationValidator
+    snt.formulario.validator.class: ApiV1Bundle\Entity\Validator\FormularioValidator
+    snt.token.validator.class: ApiV1Bundle\Entity\Validator\TokenValidator
+    snt.categorias.validator.class: ApiV1Bundle\Entity\Validator\CategoriaValidator
+    snt.dianolaborabletramite.validator.class: ApiV1Bundle\Entity\Validator\DiaNoLaborableTramiteValidator
+    snt.miargentina.validator.class: ApiV1Bundle\Entity\Validator\MiargentinaValidator
+
+    # Security
+    snt.helper.jwtoken.class: ApiV1Bundle\Helper\JWToken
+    snt.security.builder.class: Lcobucci\JWT\Builder
+    snt.security.parser.class: Lcobucci\JWT\Parser
+    snt.security.validation.class: Lcobucci\JWT\ValidationData
+
+    ## External services
+    snt.notificaciones.class: ApiV1Bundle\ExternalServices\NotificationsExternalService
+    snc.integration.class: ApiV1Bundle\ExternalServices\SNCExternalService
+    snc.puntoatencion.integration.class: ApiV1Bundle\ExternalServices\PuntoAtencionIntegration
+    snc.grupotramites.integration.class: ApiV1Bundle\ExternalServices\GrupoTramitesIntegration
+    snc.security.integration.class: ApiV1Bundle\ExternalServices\SecurityIntegration
+
+    ## Mocks
+    snc.integration.mock.class: ApiV1Bundle\Mocks\SNCExternalServiceMock
+
+services:
+
+    ### MOCKS ###
+
+    snc.integration.mock:
+        class: '%snc.integration.mock.class%'
+        arguments: ['@service_container']
+
+    ### EXTERNAL SERVICES ####
+
+    snt.notificaciones.service:
+        class: '%snt.notificaciones.class%'
+        arguments: ['@service_container']
+
+    snc.integration.service:
+        class: '%snc.integration.class%'
+        arguments: ['@service_container']
+
+    snc.puntoatencion.integration:
+        class: '%snc.puntoatencion.integration.class%'
+        arguments: ['@service_container', '@snc.integration.service', '@snc.integration.mock']
+
+    snc.grupotramites.integration:
+        class: '%snc.grupotramites.integration.class%'
+        arguments: ['@service_container', '@snc.integration.service', '@snc.integration.mock']
+
+    ## SECURITY ##
+
+    snt.security.builder:
+        class: '%snt.security.builder.class%'
+
+    snt.security.parser:
+        class: '%snt.security.parser.class%'
+
+    snt.security.validation:
+        class: '%snt.security.validation.class%'
+
+    snt.helper.jwtoken:
+        class: '%snt.helper.jwtoken.class%'
+        arguments: ['@service_container', '%secret%', '@snt.security.builder', '@snt.security.parser', '@snt.security.validation']
+
+    snt.communication.validator:
+        class: '%snt.communication.validator.class%'
+        arguments: ['@service_container']
+
+    snc.security.integration:
+        class: '%snc.security.integration.class%'
+        arguments: ['@service_container', '@snc.integration.service', '@snc.integration.mock', '@snt.communication.validator']
+
+    ### REPOSITORIES ###
+
+    snt.tramite.repository:
+        class: '%snt.tramite.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Tramite
+
+    snt.puntotramite.repository:
+        class: '%snt.puntotramite.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\PuntoTramite
+
+    snt.turno.repository:
+        class: '%snt.turno.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Turno
+
+    snt.localidad.repository:
+        class: '%snt.localidad.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Localidad
+
+    snt.provincia.repository:
+        class: '%snt.localidad.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Provincia
+
+    snt.puntoatencion.repository:
+        class: '%snt.puntoatencion.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\PuntoAtencion
+
+    snt.organismo.repository:
+        class: '%snt.organismo.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Organismo
+
+    snt.area.repository:
+        class: '%snt.area.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Area
+
+    snt.grupotramite.repository:
+        class: '%snt.grupotramite.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\GrupoTramite
+
+    snt.horarioatencion.repository:
+        class: '%snt.horarioatencion.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\HorarioAtencion
+
+    snt.disponibilidad.repository:
+        class: '%snt.disponibilidad.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Disponibilidad
+
+    snt.feriadonacional.repository:
+        class: '%snt.feriadonacional.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\FeriadoNacional
+
+    snt.dianolaborable.repository:
+        class: '%snt.dianolaborable.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\DiaNoLaborable
+
+    snt.repository.token:
+        class: '%snt.repository.token.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Token
+
+    snt.user.repository:
+        class: '%snt.user.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\User
+
+    snt.admin.repository:
+        class: '%snt.admin.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Admin
+
+    snt.userorganismo.repository:
+        class: '%snt.userorganismo.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\UserOrganismo
+
+    snt.userarea.repository:
+        class: '%snt.userarea.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\UserArea
+
+    snt.userpuntoatencion.repository:
+        class: '%snt.userpuntoatencion.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\UserPuntoAtencion
+
+    snt.usuario.repository:
+        class: '%snt.usuario.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Usuario
+
+    snt.categorias.repository:
+        class: '%snt.categorias.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Categoria
+
+    snt.categoria.tramite.repository:
+        class: '%snt.categoria.tramite.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\CategoriaTramite
+
+    snt.etiqueta.repository:
+        class: '%snt.etiqueta.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\Etiqueta
+    snt.dianolaborabletramite.repository:
+        class: '%snt.dianolaborabletramite.repository.class%'
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - ApiV1Bundle\Entity\DiaNoLaborableTramite
+
+    snt.argentina.repository:
+        class: '%snt.aregentina.repository.class%'
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    ## VALIDATORS ##
+
+    snt.area.validator:
+        class: '%snt.area.validator.class%'
+
+    snt.disponibilidad.validator:
+        class: '%snt.disponibilidad.validator.class%'
+        arguments: ['@snt.tramite.repository', '@snt.provincia.repository', '@snt.localidad.repository', '@snt.puntoatencion.repository', '@snt.horarioatencion.repository', '@snt.grupotramite.repository', '@snt.disponibilidad.repository', '@snt.dianolaborable.repository']
+
+    snt.grupotramites.validator:
+        class: '%snt.grupotramites.validator.class%'
+        arguments: ['@snt.puntoatencion.repository', '@snt.grupotramite.repository', '@snt.turno.repository']
+
+    snt.horarioatencion.validator:
+        class: '%snt.horarioatencion.validator.class%'
+
+    snt.organismo.validator:
+        class: '%snt.organismo.validator.class%'
+
+    snt.puntoatencion.validator:
+        class: '%snt.puntoatencion.validator.class%'
+        arguments: ['@snt.tramite.repository', '@snt.provincia.repository', '@snt.localidad.repository', '@snt.area.repository', '@snt.puntoatencion.repository', '@snt.turno.repository', '@snt.dianolaborable.repository', '@snt.feriadonacional.repository']
+
+    snt.tramite.validator:
+        class: '%snt.tramite.validator.class%'
+        arguments: ['@snt.area.repository', '@snt.tramite.repository']
+
+    snt.turno.validator:
+        class: '%snt.turno.validator.class%'
+        arguments: ['@snt.turno.repository', '@snt.tramite.repository', '@snt.puntoatencion.repository', '@snt.dianolaborable.repository', '@snt.disponibilidad.services','@snt.puntotramite.repository' ]
+
+    snt.feriadonacional.validator:
+        class: '%snt.feriadonacional.validator.class%'
+        arguments: ['@snt.feriadonacional.repository', '@snt.turno.repository']
+
+    snt.user.validator:
+        class: '%snt.user.validator.class%'
+        arguments: ['@snt.user.repository', '@security.password_encoder']
+
+    snt.admin.validator:
+        class: '%snt.admin.validator.class%'
+        arguments: ['@snt.user.repository', '@security.password_encoder']
+
+    snt.userorganismo.validator:
+        class: '%snt.userorganismo.validator.class%'
+        arguments: ['@snt.user.repository', '@security.password_encoder']
+
+    snt.userarea.validator:
+        class: '%snt.userarea.validator.class%'
+        arguments: ['@snt.user.repository', '@security.password_encoder']
+
+    snt.userpuntoatencion.validator:
+        class: '%snt.userpuntoatencion.validator.class%'
+        arguments: ['@snt.user.repository', '@security.password_encoder']
+
+    snt.localidad.validator:
+        class: '%snt.localidad.validator.class%'
+        arguments: ['@snt.provincia.repository']
+
+    snt.formulario.validator:
+        class: '%snt.formulario.validator.class%'
+
+    snt.token.validator:
+        class: '%snt.token.validator.class%'
+        arguments: ['@snt.user.repository', '@snt.repository.token', '@snt.helper.jwtoken']
+
+    snt.categorias.validator:
+        class: '%snt.categorias.validator.class%'
+        arguments: ['@snt.categorias.repository', '@snt.puntoatencion.repository']
+        
+    snt.dianolaborabletramite.validator:
+        class: '%snt.dianolaborabletramite.validator.class%'    
+        arguments: ['@snt.dianolaborabletramite.repository', '@snt.turno.repository']
+
+    snt.miargentina.validator:
+        class: '%snt.miargentina.validator.class%'    
+        arguments: ['@snt.turno.repository', '@snt.tramite.repository','@snt.puntotramite.repository' ]
+
+    ### SERVICES ###
+
+    snt.general.services:
+        class: '%snt.general.services.class%'
+        arguments: ['@service_container']
+
+    snt.security.services:
+        class: '%snt.services.security.class%'
+        arguments: ['@service_container', '@snt.user.repository', '@snt.repository.token', '@snt.helper.jwtoken', '@snt.user.validator', '@snt.usuario.repository', '@snc.security.integration', '@snt.communication.validator', '@snt.token.validator']
+
+    snt.tramite.services:
+        class: '%snt.tramite.services.class%'
+        arguments: ['@service_container', '@snt.tramite.repository', '@snt.area.repository', '@snt.tramite.validator', '@snt.formulario.validator', '@snt.turno.repository', '@snt.parser.services']
+        autowire: true
+
+    snt.localidad.services:
+        class: '%snt.localidad.services.class%'
+        arguments: ['@service_container', '@snt.localidad.repository', '@snt.localidad.validator']
+
+    snt.provincia.services:
+        class: '%snt.provincia.services.class%'
+        arguments: ['@service_container', '@snt.provincia.repository']
+
+    snt.turno.services:
+        class: '%snt.turno.services.class%'
+        arguments: ['@service_container', '@snt.turno.repository', '@snt.puntoatencion.repository', '@snt.tramite.repository', '@snt.grupotramite.repository', '@snt.turno.validator', '@snt.notificaciones.service', '@snt.dianolaborable.repository', '@snt.dianolaborabletramite.repository', '@snt.communication.validator', '@snt.disponibilidad.repository', '@snt.parser.services', '@snt.redis.services']
+
+    snt.redis.services:
+        class: '%snt.redis.services.class%'
+        arguments: ['@service_container',%redis_enable%]
+        
+    snt.horarioatencion.services:
+        class: '%snt.horarioatencion.services.class%'
+        arguments: ['@service_container', '@snt.puntoatencion.repository', '@snt.horarioatencion.repository', '@snt.horarioatencion.validator', '@snt.disponibilidad.repository', '@snt.grupotramite.repository', '@snt.redis.services']
+
+    snt.organismo.services:
+        class: '%snt.organismo.services.class%'
+        arguments: ['@service_container', '@snt.organismo.repository', '@snt.organismo.validator', '@snt.roles.services']
+
+    snt.area.services:
+        class: '%snt.area.services.class%'
+        arguments: ['@service_container', '@snt.organismo.repository', '@snt.area.repository', '@snt.area.validator', '@snt.roles.services']
+
+    snt.grupotramite.services:
+        class: '%snt.grupotramite.services.class%'
+        arguments: ['@service_container', '@snt.puntoatencion.repository', '@snt.tramite.repository', '@snt.grupotramite.repository', '@snt.grupotramites.validator', '@snt.disponibilidad.repository', '@snc.grupotramites.integration', '@snt.turno.repository', '@snt.redis.services']
+
+    snt.puntoatencion.services:
+        class: '%snt.puntoatencion.services.class%'
+        arguments: ['@service_container', '@snt.puntoatencion.repository', '@snt.tramite.repository', '@snt.localidad.repository', '@snt.provincia.repository', '@snt.area.repository', '@snt.puntoatencion.validator', '@snt.dianolaborable.repository', '@snc.puntoatencion.integration', '@snt.feriadonacional.repository', '@snt.roles.services', '@snt.puntotramite.repository', '@snt.redis.services']
+
+    snt.disponibilidad.services:
+        class: '%snt.disponibilidad.service.class%'
+        arguments: ['@service_container', '@snt.tramite.repository', '@snt.disponibilidad.validator', '@snt.puntoatencion.repository', '@snt.grupotramite.repository', '@snt.horarioatencion.repository', '@snt.disponibilidad.repository', '@snt.turno.repository', '@snt.puntotramite.repository', '@snt.redis.services', '@snt.dianolaborabletramite.repository']
+
+    snt.feriadonacional.services:
+        class: '%snt.feriadonacional.services.class%'
+        arguments: ['@service_container', '@snt.feriadonacional.repository', '@snt.feriadonacional.validator', '@snt.puntoatencion.repository', '@snt.dianolaborable.repository']
+
+    snt.usuario.services:
+        class: '%snt.usuario.services.class%'
+        arguments: ['@service_container', '@security.password_encoder', '@snt.user.repository', '@snt.user.validator', '@snt.admin.repository', '@snt.admin.validator', '@snt.userorganismo.repository', '@snt.userorganismo.validator', '@snt.userarea.repository', '@snt.userarea.validator', '@snt.userpuntoatencion.repository', '@snt.userpuntoatencion.validator', '@snt.organismo.repository', '@snt.area.repository', '@snt.puntoatencion.repository', '@snt.notificaciones.service', '@snt.usuario.repository', '@snt.security.services', '@snt.roles.services', '@snt.repository.token']
+
+    snt.roles.services:
+        class: '%snt.roles.services.class%'
+        arguments: ['@snt.token.validator', '@snt.usuario.repository']
+
+    snt.categorias.services:
+        class: '%snt.categorias.services.class%'
+        arguments: ['@service_container', '@snt.categorias.repository', '@snt.categorias.validator', '@snt.puntoatencion.repository', '@snt.tramite.repository', '@snt.puntoatencion.validator']
+
+    snt.categoria.tramite.services:
+        class: '%snt.categoria.tramite.services.class%'
+        arguments: ['@service_container','@doctrine.orm.entity_manager','@snt.categoria.tramite.repository']
+
+    snt.etiqueta.services:
+        class: '%snt.etiqueta.services.class%'
+        arguments: ['@service_container','@doctrine.orm.entity_manager','@snt.etiqueta.repository','@snt.tramite.repository']
+
+    snt.dianolaborabletramite.services:
+        class: '%snt.dianolaborabletramite.services.class%'
+        arguments: ['@service_container','@snt.dianolaborabletramite.repository', '@snt.dianolaborabletramite.validator', '@snt.puntoatencion.repository', '@snt.tramite.repository']
+
+    snt.miargentina.services:
+        class: '%snt.aregentina.services.class%'
+        arguments: ['@service_container', '@doctrine.orm.entity_manager', '@snt.argentina.repository', '@snt.miargentina.validator','@snt.turno.repository']
+
+
+    League\CommonMark\Extension\CommonMarkCoreExtension:
+      class: League\CommonMark\Extension\CommonMarkCoreExtension
+
+    League\CommonMark\Extension\Extension: '@League\CommonMark\Extension\CommonMarkCoreExtension'
+
+    snt.parser.enviroment:
+      class: 'SNT\Infraestructure\Services\CommonMark\SNTCommonMarkParserEnvironment'
+      autowire: true
+
+    snt.parser.services:
+      class: '%snt.parser.services.class%'
+      arguments: ['@snt.parser.enviroment']

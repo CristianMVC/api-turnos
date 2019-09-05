@@ -1,0 +1,35 @@
+parameters:
+    secureroutes:
+        '/api/v1.0/test':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/organismos(/?)(.*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION', 'ROL_ORGANISMO_AUX']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/puntosatencion(/?)(.*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/tramites(/?)(.*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION', 'ROL_ORGANISMO_AUX']
+            metodos: ['POST', 'PUT', 'DELETE']
+        '/api/v1.0/feriadoNacional(/?)(.*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/turnos/batch/cancelar':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/usuarios(/?)(.*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/turnos/([0-9]*)/reasignacion(/?)(.*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['GET', 'POST', 'PUT', 'DELETE']
+        '/api/v1.0/turnos/([0-9]*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION', 'ROL_ORGANISMO_AUX']
+            metodos: ['DELETE']
+        '/api/v1.0/disponibilidad(/?)([0-9]*)':
+            roles: ['ROL_ADMIN', 'ROL_ORGANISMO', 'ROL_AREA', 'ROL_PUNTOATENCION']
+            metodos: ['POST', 'PUT']
+        '/api/v1.0/redis/flush':
+            roles: ['ROL_ADMIN']
+            metodos: ['POST']
